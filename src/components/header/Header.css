@@ -1,0 +1,44 @@
+.header{
+    flex : 1;
+    /* border: 1px solid white; */
+    text-align: center;
+    height: max-content;
+
+}
+
+.header-title{
+    margin-top: 20%;
+    font-size: 40px;
+    /* border: 1px solid white; */
+}
+
+.blue{
+    color: rgb(166, 166, 247)
+}
+
+.header > p{
+    font-size: 16px;
+    /* border: 1px solid white; */
+}
+
+
+
+.header-cta{
+    width: fit-content;
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    background-color: #0554F2;
+    color: #ffff;
+    margin: auto;
+    margin-top: 100px;
+    font-size: 16px;
+    border-radius: 2px;
+    text-align: center;
+    padding: 15px 50px 15px 50px;
+    transition:  background-color 0.3s;
+}
+
+.header-cta:hover{
+    background-color: #0441bc;
+}
