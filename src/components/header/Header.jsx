@@ -1,9 +1,9 @@
 import "./Header.css";
 export default function Header() {
   return (
-    <section className="section header">
-      <div>
-        <h1 className="header-title">
+    <section className="header">
+      <div className="header-title-container">
+        <h1 className="header-title hidden anim-translate-down">
           Bonjour et bienvenue,
           <br /> je suis Antoine Tsinga
         </h1>
@@ -12,7 +12,7 @@ export default function Header() {
         <p>Je suis Junior Software Engineer</p>
       </div>
       <div>
-        <a className="header-cta" href="#t">
+        <a className="header-cta" href="#about">
           Découvrir plus
         </a>
       </div>
