@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CardExperiences from "./CardExperiences";
 import "./Experiences.css";
 
@@ -60,13 +61,28 @@ export default function Experiences() {
   ];
 
   const leftOrRight = ["left", "right"];
+  const onScroll = () => {
+    console.log("onScroll");
+  };
+
+  window.addEventListener("scroll", () => console.log("scroll"));
+
   return (
-    <section className="section experiences" id="experiences">
+    <section
+      className="section experiences"
+      id="experiences"
+      onScrollCapture={onScroll}
+    >
       <div className="hidden">
         <h2>Expériences</h2>
         <div className="timeline">
+          <div className="white-line"></div>
           {experiences.map((experience, index) => (
-            <CardExperiences side={leftOrRight[index % 2]} {...experience} />
+            <CardExperiences
+              key={index}
+              side={leftOrRight[index % 2]}
+              {...experience}
+            />
           ))}
         </div>
       </div>

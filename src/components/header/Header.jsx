@@ -8,9 +8,9 @@ export default function Header() {
           <br /> je suis Antoine Tsinga
         </h1>
       </div>
-      <div>
-        <p>Je suis Junior Software Engineer</p>
-      </div>
+
+      <p>Junior Software Engineer</p>
+
       <div>
         <a className="header-cta" href="#about">
           Découvrir plus

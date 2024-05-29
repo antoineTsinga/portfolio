@@ -9,11 +9,13 @@ function App() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
+        // console.log(entry);
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
+          // console.log(entry.target && entry.target.scrollTop);
         } // else {
         //   entry.target.classList.remove("show"); //show animation multiple time
+        //   console.log(entry.target && entry.target.scrollTop);
         // }
       });
     });

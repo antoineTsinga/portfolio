@@ -4,6 +4,7 @@
     width: 50%;
     /* background: rgba(255,255,255, 0.3); */
     box-sizing: border-box;
+    transition: all 1s;
 }
 
 
@@ -80,3 +81,19 @@
     border-right: 15px solid white;
     left: -14px;
 }
+
+.content{
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s ease-out;
+}
+
+
+.experience-show-btn{
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 5px;
+
+}
+
+
