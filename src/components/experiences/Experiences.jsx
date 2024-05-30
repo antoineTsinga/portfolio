@@ -66,19 +66,10 @@ export default function Experiences() {
   ];
 
   const leftOrRight = ["left", "right"];
-  const onScroll = () => {
-    console.log("onScroll");
-  };
-
-  window.addEventListener("scroll", () => console.log("scroll"));
 
   return (
-    <section
-      className="section experiences"
-      id="experiences"
-      onScrollCapture={onScroll}
-    >
-      <div className="hidden">
+    <section className="section experiences" id="experiences">
+      <div className="hidden anim-translate-up">
         <h2>Expériences</h2>
         <div className="timeline">
           {experiences.map((experience, index) => (

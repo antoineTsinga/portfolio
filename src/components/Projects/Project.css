@@ -15,7 +15,7 @@
   }
   
   .max-w-lg {
-    max-width: 32rem;
+    max-width: 40rem;
   }
   
   .mx-auto {
@@ -24,13 +24,14 @@
   }
   
   .section-title {
-    font-size: 1.875rem;
+    font-size:50px;
     font-weight: bold;
   }
   
   .section-subtitle {
     margin-top: 1rem;
     color: #a0aec0;
+    margin-bottom: 100px;
   }
   
   .grid {
@@ -79,3 +80,5 @@
     box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.4);
   }
   
+
+

@@ -129,5 +129,6 @@
     background-color: rgba(37, 41, 88, 0.2);
     margin: 5px;
     border-radius: 5px;
+    border: 1px solid #2d3748;
     /* color: white; */
 }

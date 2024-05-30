@@ -47,14 +47,11 @@
 }
 
 .header-cta:hover{
-    background-color: rgb(217, 223, 235);
+    background-color: #0554F2;
+    color: white;
 }
 
   
-.header-cta:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px  rgb(24, 84, 205);
-}
 
 
 @media screen and (max-width:600px){

@@ -14,11 +14,17 @@
   .card:hover {
     box-shadow: 0px 10px 14px 0px rgba(237, 201, 201, 0.05);
   }
-  
-  .icon {
+
+  .image-container {
     width: 100%;
-    aspect-ratio: 1;
-    color: #ec4899;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 0.6rem ;
+    background-color:white
+  }
+  
+  .image {
+    height: 100%;
   }
   
   .card-title {
@@ -32,3 +38,21 @@
     font-size: 0.875rem;
     color: #a0aec0;
   }
+
+.technos-proj{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.techno-proj{
+  font-size: 13px;
+  padding: 10px;
+  background-color: rgba(37, 41, 88, 0.2);
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #2d3748;
+  /* color: white; */
+}

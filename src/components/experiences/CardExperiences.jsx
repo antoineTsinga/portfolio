@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import fr from "../../utils/icons/Docker.svg";
 import "./CardExperiences.css";
-import internIcons from "../../utils/icons/internship-icon.svg";
 export default function CardExperiences({
   img,
   company,

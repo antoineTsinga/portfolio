@@ -5,6 +5,8 @@ import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
 import Experiences from "./components/experiences/Experiences";
 import Project from "./components/Projects/Project";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
 
 function App() {
   useEffect(() => {
@@ -33,6 +35,8 @@ function App() {
       <Profile />
       <Experiences />
       <Project />
+      <Contact />
+      <Footer />
     </div>
   );
 }

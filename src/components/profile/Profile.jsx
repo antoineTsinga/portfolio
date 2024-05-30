@@ -13,11 +13,16 @@ export default function Profile() {
   return (
     <div className="section profil" id="about">
       <div className="hidden anim-translate-up">
-        <h2> À propos</h2>
-        <p style={{ textAlign: "center", marginBottom: "100px" }}>
-          Ingénieur logiciel fullstack passionné, je transforme des idées en
-          solutions innovantes et performantes.
-        </p>
+        <div className="text-center max-w-lg mx-auto">
+          <h2> À propos</h2>
+          <p
+            className="section-subtitle "
+            style={{ textAlign: "center", marginBottom: "100px" }}
+          >
+            Ingénieur logiciel fullstack passionné, je transforme des idées en
+            solutions innovantes et performantes.
+          </p>
+        </div>
         <div className="profil-content">
           <div className="about">
             <h3>Apprendre à me connaître !</h3>
@@ -40,7 +45,7 @@ export default function Profile() {
               technologiques qui ont un impact positif tout en évoluant dans un
               environnement dynamique et collaboratif.
             </p>
-            <a href="#contact" className="header-cta2">
+            <a href="#contact" className="header-cta">
               Contact
             </a>
           </div>
@@ -48,11 +53,11 @@ export default function Profile() {
             <h3>Compétences</h3>
 
             <p>Langages</p>
-            <div className="skills-list">
+            <div className="technos">
               {languages.map((l, index) => (
                 <div
                   key={index}
-                  className="skill  hidden anim-translate-right"
+                  className="techno  hidden anim-translate-right"
                   style={{ transitionDelay: index * 100 + "ms" }}
                 >
                   {l}
@@ -60,11 +65,11 @@ export default function Profile() {
               ))}
             </div>
             <p>Frameworks</p>
-            <div className="skills-list">
+            <div className="technos">
               {frameworks.map((l, index) => (
                 <div
                   key={index}
-                  className="skill hidden anim-translate-right"
+                  className="techno hidden anim-translate-right"
                   style={{ transitionDelay: index * 100 + "ms" }}
                 >
                   {l}
@@ -72,11 +77,11 @@ export default function Profile() {
               ))}
             </div>
             <p>Outils</p>
-            <div className="skills-list">
+            <div className="technos">
               {tools.map((l, index) => (
                 <div
                   key={index}
-                  className="skill hidden anim-translate-right"
+                  className="techno hidden anim-translate-right"
                   style={{ transitionDelay: index * 100 + "ms" }}
                 >
                   {l}
