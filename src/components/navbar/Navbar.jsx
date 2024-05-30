@@ -31,19 +31,18 @@ export default function Navbar() {
           <a href="#t" className=" link">
             Contact
           </a>
-          <div>
-            <a
-              href="https://linkedin.com/in/antoine-tsinga-0363ba207/"
-              className="social"
-            >
-              <Linkedin className="social-icon" />
-            </a>
-            <a href="https://github.com/antoineTsinga" className="social">
-              <Github className="social-icon" />
-            </a>
-          </div>
         </div>
-
+        <div className="socials">
+          <a
+            href="https://linkedin.com/in/antoine-tsinga-0363ba207/"
+            className="social"
+          >
+            <Linkedin className="social-icon" />
+          </a>
+          <a href="https://github.com/antoineTsinga" className="social">
+            <Github className="social-icon" />
+          </a>
+        </div>
         <div className="burger-menu">
           <MenuIcon setOpen={setShowMenu} open={showMenu} />{" "}
         </div>

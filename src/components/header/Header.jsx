@@ -4,7 +4,7 @@ export default function Header() {
     <section className="header">
       <div className="header-title-container">
         <h1 className="header-title hidden anim-translate-down">
-          Bonjour et bienvenue,
+          Bienvenue,
           <br /> je suis Antoine Tsinga
         </h1>
       </div>

@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
 import Experiences from "./components/experiences/Experiences";
+import Project from "./components/Projects/Project";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
       </div>
       <Profile />
       <Experiences />
+      <Project />
     </div>
   );
 }

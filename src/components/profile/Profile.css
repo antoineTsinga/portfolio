@@ -56,22 +56,30 @@
   }
 
 
-  .header-cta2{
-    width: fit-content;
-    display: flex;
-    text-decoration: none;
-    background-color: #0554F2;
-    color: #ffff;
-    font-size: 16px;
-    border-radius: 2px;
-    padding: 15px 50px 15px 50px;
-    transition:  all 0.3s;
+.header-cta2{
+  width: fit-content;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #0554F2;
+  color: #ffff;
+  margin: auto;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  text-align: center;
+  padding: 0.75rem 3rem;
+  transition: background-color 0.3s;
+  margin-left: 3px;
 
 }
 
 .header-cta2:hover{
-    background-color: #0441bc;
-    transform:  translateY(-10px);
+  background-color: rgb(4, 65, 188);
+}
+
+.header-cta2:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px  rgb(24, 84, 205);
 }
 
 

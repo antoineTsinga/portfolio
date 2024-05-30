@@ -6,21 +6,8 @@ export default function Profile() {
   // Outils : Git, Docker, Figma, MySQL
   // Savoir-être : Travail d’équipe, adaptabilité, attitude de résolution de problèmes, autonome, communication,                                                     rigueur, persévérance
 
-  const languages = [
-    "Java",
-    "Python",
-    "JavaScript",
-    "Spark/Scala",
-    "TypeScript",
-    "SQL",
-  ];
-  const frameworks = [
-    "React",
-    "Angular",
-    "Django REST",
-    "SpringBoot",
-    "Node JS",
-  ];
+  const languages = ["Java", "Python", "JavaScript", "SQL"];
+  const frameworks = ["React", "Angular", "Django REST", "SpringBoot"];
 
   const tools = ["Git", "Docker", "Figma", "MySQL"];
   return (

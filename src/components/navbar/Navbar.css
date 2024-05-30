@@ -38,7 +38,7 @@
 
 .menu{
     display:flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     /* border: 1px solid white; */
     width: 70%;
@@ -50,6 +50,7 @@
     text-decoration: none;
     color: #ffff;
     padding: 20px 0 20px 0;
+    margin-left: 10%;
     /* border: 1px solid black; */
     transition: box-shadow 0.3s;
     font-size: 16px;
@@ -79,12 +80,20 @@
    
 }
 
+.socials{
+    display: flex;
+    /* border: 1px solid white; */
+    justify-content: start;
+    width: fit-content;
+    align-items: center;
+}
+
 .social-icon{
     width: 30px;
     color: white;
-    margin-left: 20px;
     transition:  all 0.3s;
-    margin-right: 30px;
+    /* border: 1px solid white; */
+    margin-right: 20px;
 }
 
 .social-icon:hover{
@@ -94,7 +103,9 @@
 }
 
 .burger-menu{
-
+    margin-right: 20px ;
+    position: absolute;
+    visibility: hidden;
     z-index: 15;
 }
 
@@ -120,7 +131,7 @@
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:700px){
     .navbar{
         margin: auto;
         display: flex;
@@ -136,6 +147,7 @@
     }
 
     .burger-menu{
+        position: static;
         visibility:visible;
         border: 1px solid white;
         width: 50px;
