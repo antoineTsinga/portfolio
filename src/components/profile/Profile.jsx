@@ -17,7 +17,11 @@ export default function Profile() {
           <h2> À propos</h2>
           <p
             className="section-subtitle "
-            style={{ textAlign: "center", marginBottom: "100px" }}
+            style={{
+              textAlign: "center",
+              marginBottom: "100px",
+              padding: "0 1rem",
+            }}
           >
             Ingénieur logiciel fullstack passionné, je transforme des idées en
             solutions innovantes et performantes.
@@ -45,7 +49,7 @@ export default function Profile() {
               technologiques qui ont un impact positif tout en évoluant dans un
               environnement dynamique et collaboratif.
             </p>
-            <a href="#contact" className="header-cta">
+            <a href="#contact" className="cta-about header-cta">
               Contact
             </a>
           </div>

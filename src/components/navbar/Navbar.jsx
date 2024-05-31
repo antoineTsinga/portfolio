@@ -59,10 +59,10 @@ export default function Navbar() {
         <a href="#experiences" className="" onClick={() => setShowMenu(false)}>
           Expériences
         </a>
-        <a href="#t" className="" onClick={() => setShowMenu(false)}>
+        <a href="#projects" className="" onClick={() => setShowMenu(false)}>
           Projets
         </a>
-        <a href="#t" className="" onClick={() => setShowMenu(false)}>
+        <a href="#contact" className="" onClick={() => setShowMenu(false)}>
           Contact
         </a>
       </div>
