@@ -82,3 +82,19 @@
   
 
 
+  @media screen and (max-width:700px){
+
+    .project{
+      margin-bottom:30vh;
+    }
+    
+    .project h2 {
+    font-size: 30px;
+    }
+
+    .project p {
+      font-size: 13px;
+    }
+  
+
+}

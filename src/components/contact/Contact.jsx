@@ -3,7 +3,7 @@ import "./Contact.css";
 
 export default function Contact() {
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <div className="text-center max-w-lg mx-auto">
         <h2 className="section-title">Contactez-moi</h2>
         <div className="contact-media">
@@ -13,7 +13,7 @@ export default function Contact() {
           <a href="https://github.com/antoineTsinga">
             <Github className="social-media" />
           </a>
-          <a href="mailto:antoine.tsinga@gmail.com" className="link">
+          <a href="mailto:antoine.tsinga@gmail.com" className="link-contact">
             antoine.tsinga@gmail.com
           </a>
         </div>

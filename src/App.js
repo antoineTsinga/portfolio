@@ -7,6 +7,7 @@ import Experiences from "./components/experiences/Experiences";
 import Project from "./components/Projects/Project";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Analytics />
       <div className="firstview section" id="home">
         <Navbar />
         <Header />

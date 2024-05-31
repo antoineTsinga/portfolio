@@ -7,6 +7,8 @@
   color: #ffffff;
   margin: 0;
   padding: 0;
+  /* overflow: hidden; */
+  /* width: 100%; */
   /* background-image: url('/background.svg');
   background-size: cover; 
   background-position: center;
@@ -15,7 +17,6 @@
 
 
 .firstview{
-  max-height: 1200px;
   display: flex;
   flex-direction: column;
   /* border: 1px solid white; */
@@ -41,7 +42,7 @@
   transform:  translateY(-100%);
 }
 .anim-translate-up{
-  transform:  translateY(50%);
+  transform:  translateY(150px);
 }
 
 
@@ -52,7 +53,7 @@
   }
 
   .anim-translate-up{
-    transform:  translateY(20%);
+    transform:  translateY(5%);
   }
 
 }

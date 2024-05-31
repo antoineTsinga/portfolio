@@ -23,7 +23,7 @@ export default function Project() {
   ];
 
   return (
-    <div className="section project">
+    <div className="section project" id="projects">
       <div className="hidden anim-translate-up">
         <section className="marketing-section">
           <div className="container">

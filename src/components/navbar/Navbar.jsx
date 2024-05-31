@@ -25,10 +25,10 @@ export default function Navbar() {
           <a href="#experiences" className="link">
             Expériences
           </a>
-          <a href="#t" className="link">
+          <a href="#projects" className="link">
             Projets
           </a>
-          <a href="#t" className=" link">
+          <a href="#contact" className=" link">
             Contact
           </a>
         </div>

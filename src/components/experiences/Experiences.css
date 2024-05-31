@@ -1,6 +1,6 @@
 .experiences{
     /* border: 1px solid white; */
-    margin-bottom: 50vh;
+    margin-bottom: 30vh;
 }
 
 .experiences h2 {
@@ -21,6 +21,7 @@
     position: absolute;
     width: 6px;
     height: 100%;
+    border-radius: 10px;
     background-color: rgb(255, 255, 255, 0.4);
     top: 0;
     left: 50%;
@@ -43,14 +44,16 @@
     }
 }
 
-@media screen and (max-width:600px){
-    
+@media screen and (max-width:700px){
+
     .experiences h2 {
-    font-size: 30px;
+        font-size: 30px;
+        margin-bottom: 100px;
     }
 
     .timeline{
-        margin: 50% auto;
+        margin: auto;
+        /* border: 1px solid  black; */
     }
 
     .timeline::after{
