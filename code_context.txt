@@ -2,17 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 
-
 .App {
   font-family: 'Montserrat', sans-serif;
   background-color: #161e2d;
   color: #ffffff;
-  overflow: auto;
-  overflow-x: hidden;
-  height: 100vh;
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  /* overflow: hidden; */
+  /* width: 100%; */
   /* background-image: url('/background.svg');
   background-size: cover; 
   background-position: center;
@@ -21,7 +18,6 @@
 
 
 .firstview{
-  max-height: 1200px;
   display: flex;
   flex-direction: column;
   /* border: 1px solid white; */
@@ -47,7 +43,7 @@
   transform:  translateY(-100%);
 }
 .anim-translate-up{
-  transform:  translateY(50%);
+  transform:  translateY(150px);
 }
 
 
@@ -58,7 +54,7 @@
   }
 
   .anim-translate-up{
-    transform:  translateY(20%);
+    transform:  translateY(5%);
   }
 
 }
@@ -91,6 +87,10 @@ import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
 import Experiences from "./components/experiences/Experiences";
+import Project from "./components/Projects/Project";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   useEffect(() => {
@@ -112,12 +112,16 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Analytics />
       <div className="firstview section" id="home">
         <Navbar />
         <Header />
       </div>
       <Profile />
       <Experiences />
+      <Project />
+      <Contact />
+      <Footer />
     </div>
   );
 }
@@ -134,6 +138,88 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+// File: src/components/contact/Contact.css
+.contact{
+    padding-bottom: 100px;
+}
+
+.contact-media{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media{
+    margin-left: 0;
+    color: white;
+    height: 50px;
+    margin: 10px;
+    transition: color 0.3s;
+}
+
+
+.social-media:hover{
+    color: #0554F2;
+}
+
+
+.link-contact{
+    display: block;
+    text-decoration: none;
+    color: #ffff;
+    padding: 20px 0 20px 0;
+    margin: 10px;
+    /* border: 1px solid black; */
+    transition: box-shadow 0.3s;
+    font-size: 16px;
+}
+
+.link-contact:hover{
+    box-shadow: inset 0px -2px white;
+}
+
+
+@media screen and (max-width:700px){
+.contact h2 {
+    font-size: 30px;
+    }
+    .social-media{
+        height: 40px;
+
+    }
+
+    .contact-media{
+        flex-direction:column;
+        margin: auto;
+    }
+    
+}
+// File: src/components/contact/Contact.jsx
+import { Github, Linkedin } from "../../utils/icons/icons";
+import "./Contact.css";
+
+export default function Contact() {
+  return (
+    <section className="contact" id="contact">
+      <div className="text-center max-w-lg mx-auto">
+        <h2 className="section-title">Contactez-moi</h2>
+        <div className="contact-media">
+          <a href="https://linkedin.com/in/antoine-tsinga-0363ba207/">
+            <Linkedin className="social-media" />
+          </a>
+          <a href="https://github.com/antoineTsinga">
+            <Github className="social-media" />
+          </a>
+          <a href="mailto:antoine.tsinga@gmail.com" className="link-contact">
+            antoine.tsinga@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // File: src/components/experiences/CardExperiences.css
 .card-container{
     padding: 10px 50px;
@@ -142,19 +228,27 @@ test('renders learn react link', () => {
     /* background: rgba(255,255,255, 0.3); */
     box-sizing: border-box;
     transition: all 1s;
+    color: rgb(213, 215, 222);;
+    
 }
 
 
 .text-box{
     padding: 20px 30px;
-    background-color: white;
+    background-color: rgb(0, 0, 0,0.2);
     position: relative;
-    border-radius: 6px;
     font-size: 15px;
-    color: black;
+    /* color: black; */
     display: flex;
     flex-direction: column;
-    /* margin: 10px 50px; */
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px #0000, 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border: 1px solid #2d3748;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-decoration: none;
+
 }
 
 
@@ -202,8 +296,8 @@ test('renders learn react link', () => {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
-    right: -14px;
+    border-left: 15px solid #2d3748;
+    right: -15px;
 
 }
 
@@ -215,8 +309,8 @@ test('renders learn react link', () => {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid white;
-    left: -14px;
+    border-right: 15px solid #2d3748;
+    left: -15px;
 }
 
 .content{
@@ -229,11 +323,38 @@ test('renders learn react link', () => {
 .experience-show-btn{
     margin-top: 20px;
     width: 100px;
-    border-radius: 5px;
-
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+    color: rgb(177, 181, 199);
 }
 
 
+.experience-show-btn:hover{
+    background-color: rgba(60, 62, 99, 0.2);
+
+}
+
+.technos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.techno{
+    font-size: 13px;
+    padding: 10px;
+    background-color: rgba(37, 41, 88, 0.2);
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #2d3748;
+    /* color: white; */
+}
 
 // File: src/components/experiences/CardExperiences.jsx
 import { useRef, useState } from "react";
@@ -247,6 +368,7 @@ export default function CardExperiences({
   period,
   details,
   side,
+  technos,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef(null);
@@ -256,16 +378,26 @@ export default function CardExperiences({
       <div className={`text-box hidden anim-translate-${side}`}>
         <div className="card-title">{company}</div>
         <div className="card-title">{title}</div>
-        <small>{period}</small>
+        <small>{`${period}, ${location}`}</small>
 
         <div
           ref={contentRef}
           className={`content`}
           style={{ height: isOpen ? contentRef.current.scrollHeight : "0px" }}
         >
-          {details.map((detail, index) => (
-            <p key={index}>{detail}</p>
-          ))}
+          <div>
+            {details.map((detail, index) => (
+              <p key={index}>{detail}</p>
+            ))}
+          </div>
+          <div className="technos">
+            {technos &&
+              technos.map((l, index) => (
+                <div key={index} className="techno">
+                  {l}
+                </div>
+              ))}
+          </div>
         </div>
 
         <span className={`${side}-card-container-arrow`}></span>
@@ -275,7 +407,7 @@ export default function CardExperiences({
             setIsOpen(!isOpen);
           }}
         >
-          see More
+          {!isOpen ? "Voir plus" : "Voir moins"}
         </button>
       </div>
     </div>
@@ -285,7 +417,7 @@ export default function CardExperiences({
 // File: src/components/experiences/Experiences.css
 .experiences{
     /* border: 1px solid white; */
-    margin-bottom: 50vh;
+    margin-bottom: 30vh;
 }
 
 .experiences h2 {
@@ -305,53 +437,21 @@ export default function CardExperiences({
     content: '';
     position: absolute;
     width: 6px;
-    height: 50px;
-    background-color: rgb(255, 255, 255);
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255, 0.4);
     top: 0;
     left: 50%;
     margin-left: -3px;
     z-index: -1;
-    animation: moveline 6s linear forwards;
+    animation: moveline 5s linear forwards;
+
 }
 
-/* .white-line{
-    height:  10px;
-    width: 6px;
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    position: -webkit-sticky;
-    left: 50%;
-    z-index:-1;
 
-} */
 
-/* .left-card-container::after{
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background-color: white;
-    top: 0;
-    left: 100%;
-    margin-left: -3px;
-    z-index: -1;
-    animation: moveline 1s linear forwards;
-}
 
-.right-card-container::after{
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background-color: white;
-    top: 0;
-    left: 0%;
-    margin-left: -3px;
-    z-index: -1;
-    animation: moveline 6s linear forwards;
-} */
 
-/* 
 @keyframes moveline {
     0%{
         height: 0;
@@ -359,16 +459,18 @@ export default function CardExperiences({
     100%{
         height: 100%;
     }
-} */
+}
 
-@media screen and (max-width:600px){
-    
+@media screen and (max-width:700px){
+
     .experiences h2 {
-    font-size: 30px;
+        font-size: 30px;
+        margin-bottom: 100px;
     }
 
     .timeline{
-        margin: 50% auto;
+        margin: auto;
+        /* border: 1px solid  black; */
     }
 
     .timeline::after{
@@ -404,7 +506,6 @@ export default function CardExperiences({
 
 }
 // File: src/components/experiences/Experiences.jsx
-import { useEffect } from "react";
 import CardExperiences from "./CardExperiences";
 import "./Experiences.css";
 
@@ -414,32 +515,36 @@ export default function Experiences() {
       company: "Orthoin3D",
       location: "Paris, France",
       title: "Stagiaire Software Engineer",
-      period: "Septembre 2023 – Février 2023",
+      period: "Septembre 2021 – Février 2022",
       details: [
-        <li>
-          Maintenance corrective et évolutive d’un logiciel de planification de
-          production d’aligneur dentaire Inplan
-        </li>,
-        <li>
-          Mise en place de tests frontaux automatisés de bout en bout pour
-          valider l'intégrité de l'application
-        </li>,
-        <li>
-          Montée de la version de la bibliothèque de traitement 3D pour
-          s’aligner sur les spécificités clients
-        </li>,
+        " Maintenance corrective et évolutive d’un logiciel de planification de production d’aligneur dentaire Inplan",
+        " Mise en place de tests frontaux automatisés de bout en bout pour  valider l'intégrité de l'application",
+        " Montée de la version de la bibliothèque de traitement 3D pour s’aligner sur les spécificités clients",
+      ],
+      technos: [
+        "Javascript",
+        "React",
+        "Python",
+        "Django REST framework",
+        "Cypress",
+        "shortcut",
       ],
     },
     {
       company: "Orthoin3D",
       location: "Paris, France",
       title: "Junior Software Engineer (temps partiel)",
-      period: "Avril 2023 – Juillet 2023",
+      period: "Avril 2022 – Juillet 2022",
       details: [
-        <li>
-          Maintenance corrective et évolutive du logiciel de planification de
-          production d’aligneur dentaire Inplan
-        </li>,
+        "Maintenance corrective et évolutive du logiciel de planification de production d’aligneur dentaire Inplan",
+      ],
+      technos: [
+        "Javascript",
+        "React",
+        "Python",
+        "Django REST framework",
+        "Cypress",
+        "shortcut",
       ],
     },
     {
@@ -448,41 +553,33 @@ export default function Experiences() {
       title: "Stagiaire Software Engineer Fullstack",
       period: "Février 2023 – Août 2023",
       details: [
-        <li>
-          Industrialisation d’un chantier manuel d'Enedis de suivi de
-          consommation par la mise en place d'un outillage spécifique et d'une
-          IHM
-        </li>,
-        <li>
-          Amélioration et refactorisation du code de traitement de reporting,
-          augmentant la vitesse de traitement de 15%
-        </li>,
-        <li>
-          Création d'une API pour relier le reporting des données à l'interface
-          frontale et mise en place de tests avec un taux de couverture de plus
-          de 90%
-        </li>,
+        "Industrialisation d’un chantier manuel d'Enedis de suivi de consommation par la mise en place d'un outillage spécifique et d'une IHM",
+        "Amélioration et refactorisation du code de traitement de reporting, augmentant la vitesse de traitement de 15%",
+        "Création d'une API pour relier le reporting des données à l'interface frontale et mise en place de tests avec un taux de couverture de plus de 90%",
+      ],
+      technos: [
+        "Java",
+        "Angular",
+        "Scala",
+        "Hive/HDFS/Spark",
+        "Elasticsearch",
+        "SonarQube",
+        "JUnit5",
+        "Mockito",
+        "Jenkins",
+        "JIRA",
+        "Confluence",
       ],
     },
   ];
 
   const leftOrRight = ["left", "right"];
-  const onScroll = () => {
-    console.log("onScroll");
-  };
-
-  window.addEventListener("scroll", () => console.log("scroll"));
 
   return (
-    <section
-      className="section experiences"
-      id="experiences"
-      onScrollCapture={onScroll}
-    >
-      <div className="hidden">
+    <section className="section experiences" id="experiences">
+      <div className="hidden anim-translate-up">
         <h2>Expériences</h2>
         <div className="timeline">
-          <div className="white-line"></div>
           {experiences.map((experience, index) => (
             <CardExperiences
               key={index}
@@ -493,6 +590,45 @@ export default function Experiences() {
         </div>
       </div>
     </section>
+  );
+}
+
+// File: src/components/footer/Footer.css
+.footer{
+    background-color: rgb(0, 0, 0, 0.3);
+   
+}
+
+.container-footer{
+    margin: 0 auto;
+    padding: 40px 3rem;
+}
+
+.container-footer-val{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+// File: src/components/footer/Footer.jsx
+import "./Footer.css";
+
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container-footer">
+        <div className="container-footer-val">
+          <div>
+            <h3>Antoine Tsinga</h3>
+          </div>
+          <div>
+            <p className="">Copyright &copy; 2024. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -512,6 +648,8 @@ export default function Experiences() {
 .header-title{
     font-size: 60px;
     /* border: 1px solid white; */
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .blue{
@@ -528,28 +666,32 @@ export default function Experiences() {
 
 .header-cta{
     width: fit-content;
-    display: flex;
+    display: inline-block;
     text-decoration: none;
     text-align: center;
-    background-color: #0554F2;
-    color: #ffff;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
     margin: auto;
     /* margin-top: 100px; */
-    font-size: 16px;
-    border-radius: 2px;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
     text-align: center;
-    padding: 15px 50px 15px 50px;
-    transition:  all 0.3s;
+    padding: 0.75rem 3rem;
+    transition: background-color 0.3s;
 }
 
 .header-cta:hover{
-    background-color: #0441bc;
-    transform:  translateY(-10px);
+    background-color: #0554F2;
+    color: white;
 }
 
-@media screen and (max-width:600px){
+  
+
+
+@media screen and (max-width:700px){
     .header-title{
-        font-size: 30px;
+        font-size: 35px;
         /* border: 1px solid white; */
     }
 
@@ -564,7 +706,7 @@ export default function Header() {
     <section className="header">
       <div className="header-title-container">
         <h1 className="header-title hidden anim-translate-down">
-          Bonjour et bienvenue,
+          Bienvenue,
           <br /> je suis Antoine Tsinga
         </h1>
       </div>
@@ -670,15 +812,17 @@ export default MenuIcon;
 
 // File: src/components/navbar/Navbar.css
 .nav{
-    position: relative;
+    
+    max-width: 1200px;
+    width: 100%;
+    
 }
 .navbar{
     position: relative;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
+   
     height: 100px;
     align-items: center;
     /* background-color: rgba(0, 0, 0, 0.1); */
@@ -686,16 +830,13 @@ export default MenuIcon;
 }
 
 .logo-menu{
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    height: 80px;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    /* border: 1px solid white; */
 }
 
 .logo-menu a{
-
     position:fixed;
     z-index: 15;
     /* border: 1px solid white; */
@@ -703,13 +844,12 @@ export default MenuIcon;
 
 .memoji{
     width: 100px;
-    border-radius: 50%;
-
+     /* border: 1px solid white; */
 }
 
 .menu{
     display:flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     /* border: 1px solid white; */
     width: 70%;
@@ -721,6 +861,7 @@ export default MenuIcon;
     text-decoration: none;
     color: #ffff;
     padding: 20px 0 20px 0;
+    margin-left: 10%;
     /* border: 1px solid black; */
     transition: box-shadow 0.3s;
     font-size: 16px;
@@ -730,52 +871,43 @@ export default MenuIcon;
     box-shadow: inset 0px -2px white;
 }
 
-.btn-cta{
+
+
+.socials{
     display: flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration: none;
-    background-color: #0554F2;
-    color: #ffff;
-
-    font-size: 16px;
-    border-radius: 2px;
-    text-align: center;
-    padding: 15px 50px 15px 50px;
-    transition:  all 0.3s;
-}
-
-.btn-cta:hover{
-    background-color: #616d85;
-   
+    /* border: 1px solid white; */
+    justify-content: start;
+    width: fit-content;
+    align-items: center;
 }
 
 .social-icon{
     width: 30px;
     color: white;
-    margin-left: 20px;
     transition:  all 0.3s;
-    margin-right: 30px;
+    /* border: 1px solid white; */
+    margin-right: 20px;
 }
 
 .social-icon:hover{
-
     color: #0554F2;
-    transform:  translateY(-10px);
 }
 
 .burger-menu{
-
+    margin-right: 20px ;
+    /* position: absolute; */
+    visibility: hidden;
     z-index: 15;
 }
 
 .menu-burger-hidden{
     position: absolute;
-    background-color: rgb(0, 0, 0,0.5);
+    background-color: rgb(0, 0, 0,0.6);
     width: 100%;
     height: 0;
     overflow: hidden;
     transition: height 0.3s ease-out;
+    z-index: 10;
 
 }
 
@@ -791,7 +923,7 @@ export default MenuIcon;
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:700px){
     .navbar{
         margin: auto;
         display: flex;
@@ -799,16 +931,18 @@ export default MenuIcon;
         max-width: 1200px;
         width: 100%;
         height: 100px;
-        align-items: center;
-
+        /* border: 1px solid rgb(0, 0, 0); */
     }
     .menu{
         visibility: hidden;
+        position: absolute;
+        
     }
 
     .burger-menu{
+        position: static;
         visibility:visible;
-        border: 1px solid white;
+        border: 1px solid rgb(255, 255, 255);
         width: 50px;
         height: 50px;
 
@@ -843,25 +977,24 @@ export default function Navbar() {
           <a href="#experiences" className="link">
             Expériences
           </a>
-          <a href="#t" className="link">
+          <a href="#projects" className="link">
             Projets
           </a>
-          <a href="#t" className=" link">
+          <a href="#contact" className=" link">
             Contact
           </a>
-          <div>
-            <a
-              href="https://linkedin.com/in/antoine-tsinga-0363ba207/"
-              className="social"
-            >
-              <Linkedin className="social-icon" />
-            </a>
-            <a href="https://github.com/antoineTsinga" className="social">
-              <Github className="social-icon" />
-            </a>
-          </div>
         </div>
-
+        <div className="socials">
+          <a
+            href="https://linkedin.com/in/antoine-tsinga-0363ba207/"
+            className="social"
+          >
+            <Linkedin className="social-icon" />
+          </a>
+          <a href="https://github.com/antoineTsinga" className="social">
+            <Github className="social-icon" />
+          </a>
+        </div>
         <div className="burger-menu">
           <MenuIcon setOpen={setShowMenu} open={showMenu} />{" "}
         </div>
@@ -919,6 +1052,7 @@ export default function Navbar() {
 
   .profil-content{
     display: flex;
+    
     /* border: 1px solid white; */
   }
 
@@ -926,6 +1060,13 @@ export default function Navbar() {
   .about{
     /* border: 1px solid white; */
     width: 60%;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px #0000, 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border: 1px solid #2d3748;
+    border-radius: 0.75rem;
+    padding: 2rem;
+
   }
   .profils-skills{
     width: 35%;
@@ -948,22 +1089,30 @@ export default function Navbar() {
   }
 
 
-  .header-cta2{
-    width: fit-content;
-    display: flex;
-    text-decoration: none;
-    background-color: #0554F2;
-    color: #ffff;
-    font-size: 16px;
-    border-radius: 2px;
-    padding: 15px 50px 15px 50px;
-    transition:  all 0.3s;
+.header-cta2{
+  width: fit-content;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #0554F2;
+  color: #ffff;
+  margin: auto;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  text-align: center;
+  padding: 0.75rem 3rem;
+  transition: background-color 0.3s;
+  margin-left: 3px;
 
 }
 
 .header-cta2:hover{
-    background-color: #0441bc;
-    transform:  translateY(-10px);
+  background-color: rgb(4, 65, 188);
+}
+
+.header-cta2:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px  rgb(24, 84, 205);
 }
 
 
@@ -1000,31 +1149,23 @@ export default function Profile() {
   // Outils : Git, Docker, Figma, MySQL
   // Savoir-être : Travail d’équipe, adaptabilité, attitude de résolution de problèmes, autonome, communication,                                                     rigueur, persévérance
 
-  const languages = [
-    "Java",
-    "Python",
-    "JavaScript",
-    "Spark/Scala",
-    "TypeScript",
-    "SQL",
-  ];
-  const frameworks = [
-    "React",
-    "Angular",
-    "Django REST",
-    "SpringBoot",
-    "Node JS",
-  ];
+  const languages = ["Java", "Python", "JavaScript", "SQL"];
+  const frameworks = ["React", "Angular", "Django REST", "SpringBoot"];
 
   const tools = ["Git", "Docker", "Figma", "MySQL"];
   return (
     <div className="section profil" id="about">
       <div className="hidden anim-translate-up">
-        <h2> À propos</h2>
-        <p style={{ textAlign: "center", marginBottom: "100px" }}>
-          Ingénieur logiciel fullstack passionné, je transforme des idées en
-          solutions innovantes et performantes.
-        </p>
+        <div className="text-center max-w-lg mx-auto">
+          <h2> À propos</h2>
+          <p
+            className="section-subtitle "
+            style={{ textAlign: "center", marginBottom: "100px" }}
+          >
+            Ingénieur logiciel fullstack passionné, je transforme des idées en
+            solutions innovantes et performantes.
+          </p>
+        </div>
         <div className="profil-content">
           <div className="about">
             <h3>Apprendre à me connaître !</h3>
@@ -1047,7 +1188,7 @@ export default function Profile() {
               technologiques qui ont un impact positif tout en évoluant dans un
               environnement dynamique et collaboratif.
             </p>
-            <a href="#contact" className="header-cta2">
+            <a href="#contact" className="header-cta">
               Contact
             </a>
           </div>
@@ -1055,11 +1196,11 @@ export default function Profile() {
             <h3>Compétences</h3>
 
             <p>Langages</p>
-            <div className="skills-list">
+            <div className="technos">
               {languages.map((l, index) => (
                 <div
                   key={index}
-                  className="skill  hidden anim-translate-right"
+                  className="techno  hidden anim-translate-right"
                   style={{ transitionDelay: index * 100 + "ms" }}
                 >
                   {l}
@@ -1067,11 +1208,11 @@ export default function Profile() {
               ))}
             </div>
             <p>Frameworks</p>
-            <div className="skills-list">
+            <div className="technos">
               {frameworks.map((l, index) => (
                 <div
                   key={index}
-                  className="skill hidden anim-translate-right"
+                  className="techno hidden anim-translate-right"
                   style={{ transitionDelay: index * 100 + "ms" }}
                 >
                   {l}
@@ -1079,11 +1220,11 @@ export default function Profile() {
               ))}
             </div>
             <p>Outils</p>
-            <div className="skills-list">
+            <div className="technos">
               {tools.map((l, index) => (
                 <div
                   key={index}
-                  className="skill hidden anim-translate-right"
+                  className="techno hidden anim-translate-right"
                   style={{ transitionDelay: index * 100 + "ms" }}
                 >
                   {l}
@@ -1092,6 +1233,280 @@ export default function Profile() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// File: src/components/Projects/CardProject.css
+.card {
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px #0000, 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border: 1px solid #2d3748;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-decoration: none;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 10px 14px 0px rgba(237, 201, 201, 0.05);
+  }
+
+  .image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 0.6rem ;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .image {
+    width:  100%;
+    height:  100%;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #a0aec0;
+  }
+
+.technos-proj{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.techno-proj{
+  font-size: 13px;
+  padding: 10px;
+  background-color: rgba(37, 41, 88, 0.2);
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #2d3748;
+  /* color: white; */
+}
+
+
+@media screen and (max-width:600px){
+    
+  .card h3 {
+  font-size: 16px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+
+}
+// File: src/components/Projects/CardProject.jsx
+import { FluentOpen16Filled, Github } from "../../utils/icons/icons";
+import "./CardProject.css";
+
+export default function CardProject({
+  img,
+  title,
+  description,
+  technos,
+  github,
+  prod,
+}) {
+  return (
+    <div className="card">
+      <div className="image-container">
+        <img className="image" src={img} alt={title} />
+      </div>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-text">{description}</p>
+      <div className="technos-proj">
+        {technos &&
+          technos.map((l, index) => (
+            <div key={index} className="techno-proj">
+              {l}
+            </div>
+          ))}
+      </div>
+      <div className="code-prod">
+        <a href={prod} className="social">
+          <FluentOpen16Filled className="social-icon" />
+        </a>
+        <a href={github} className="social">
+          <Github className="social-icon" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// File: src/components/Projects/Project.css
+.marketing-section {
+    /* background-color: #1a202c; */
+    color: white;
+    padding: 2rem 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .max-w-lg {
+    max-width: 40rem;
+  }
+  
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section-title {
+    font-size:50px;
+    font-weight: bold;
+  }
+  
+  .section-subtitle {
+    margin-top: 1rem;
+    color: #a0aec0;
+    margin-bottom: 100px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+
+  
+  .mt-12 {
+    margin-top: 3rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #ec4899;
+    padding: 0.75rem 3rem;
+    font-size: 0.875rem;
+    font-weight: medium;
+    color: white;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background-color: #be185d;
+  }
+  
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.4);
+  }
+  
+
+
+  @media screen and (max-width:700px){
+
+    .project{
+      margin-bottom:30vh;
+    }
+    
+    .project h2 {
+    font-size: 30px;
+    }
+
+    .project p {
+      font-size: 13px;
+    }
+  
+
+}
+// File: src/components/Projects/Project.jsx
+import CardProject from "./CardProject";
+import "./Project.css";
+
+export default function Project() {
+  const projects = [
+    {
+      img: "/images/ancachess.png",
+      title: "Online Chess platform",
+      description: "Platforme de jeu d'éches en ligne",
+      prod: "https://ancachess.vercel.app/",
+      github: "https://github.com/antoineTsinga/chessgame",
+      technos: ["React", "Django"],
+    },
+    {
+      img: "/images/hifashowase.png",
+      title: "Hight fashion showcase",
+      description:
+        "Site vitrine destiné à un couturier pour exposer des créations et prendre des commandes",
+      prod: "",
+      github: "https://github.com/antoineTsinga/HiFaShowcase",
+      technos: ["React", "Spring boot"],
+    },
+  ];
+
+  return (
+    <div className="section project" id="projects">
+      <div className="hidden anim-translate-up">
+        <section className="marketing-section">
+          <div className="container">
+            <div className="text-center max-w-lg mx-auto">
+              <h2 className="section-title">Réalisations</h2>
+              <p className="section-subtitle">
+                Explorez mes réalisations en développement logiciel, où
+                innovation et expertise technique se rencontrent pour résoudre
+                des problèmes complexes.
+              </p>
+            </div>
+            <div className="grid">
+              {projects.map((project, index) => (
+                <CardProject key={index} {...project} />
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <a href="#aef" className="header-cta">
+                Contactez moi
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -1344,6 +1759,17 @@ export function Linkedin(props) {
       <path
         fill="currentColor"
         d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91c-1.182 0-1.886.796-2.195 1.565c-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126c2.815 0 4.926 1.84 4.926 5.792M2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254z"
+      ></path>
+    </svg>
+  );
+}
+
+export function FluentOpen16Filled(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+      <path
+        fill="currentColor"
+        d="M4.75 3.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25v-1.5a.75.75 0 0 1 1.5 0v1.5A2.75 2.75 0 0 1 11.25 14h-6.5A2.75 2.75 0 0 1 2 11.25v-6.5A2.75 2.75 0 0 1 4.75 2h1.5a.75.75 0 0 1 0 1.5zM8 2.75A.75.75 0 0 1 8.75 2h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V4.561l-3.22 3.22A.75.75 0 1 1 8.22 6.72l3.22-3.22H8.75A.75.75 0 0 1 8 2.75"
       ></path>
     </svg>
   );

@@ -40,11 +40,11 @@ export default function Project() {
                 <CardProject key={index} {...project} />
               ))}
             </div>
-            <div className="text-center mt-12">
+            {/* <div className="text-center mt-12">
               <a href="#aef" className="header-cta">
                 Contactez moi
               </a>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>

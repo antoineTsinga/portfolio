@@ -7,6 +7,9 @@
   color: #ffffff;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow-y:scroll;
+  scroll-behavior: smooth;
   /* overflow: hidden; */
   /* width: 100%; */
   /* background-image: url('/background.svg');
