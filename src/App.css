@@ -18,6 +18,12 @@
 .firstview{
   display: flex;
   flex-direction: column;
+  margin-bottom: 30vh;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: auto;
+  margin-bottom: 20vh;
+  overflow: hidden;
   /* border: 1px solid white; */
 }
 

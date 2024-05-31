@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Analytics />
-      <div className="firstview section" id="home">
+      <div className="firstview" id="home">
         <Navbar />
         <Header />
       </div>
