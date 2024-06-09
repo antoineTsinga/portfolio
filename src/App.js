@@ -27,6 +27,18 @@ function App() {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((element) => observer.observe(element));
   }, []);
+
+  useEffect(() => {
+    const indentifier = setInterval(() => {
+      fetch(`https://ancachess-back.onrender.com/create_game/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }, 14000);
+    return clearInterval(indentifier);
+  }, []);
   return (
     <div className="App">
       <Analytics />
