@@ -29,6 +29,12 @@ function App() {
   }, []);
 
   useEffect(() => {
+    fetch(`https://ancachess-back.onrender.com/create_game/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).catch((error) => {});
     const indentifier = setInterval(() => {
       fetch(`https://ancachess-back.onrender.com/create_game/`, {
         method: "POST",
@@ -36,7 +42,7 @@ function App() {
           "Content-Type": "application/json",
         },
       });
-    }, 14000);
+    }, 10000);
     return clearInterval(indentifier);
   }, []);
   return (
