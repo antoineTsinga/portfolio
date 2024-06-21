@@ -20,6 +20,15 @@ export default function Project() {
       github: "https://github.com/antoineTsinga/HiFaShowcase",
       technos: ["React", "Spring boot"],
     },
+    {
+      img: "/images/stream-tv.png",
+      title: "StreamTV",
+      description:
+        "Site de recommendation de films et séries basé sur les preférences de utilisateur et les tendances",
+      prod: "",
+      github: "",
+      technos: ["Angular", "Spring boot"],
+    },
   ];
 
   return (

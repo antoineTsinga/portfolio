@@ -25,12 +25,27 @@ export default function CardProject({
           ))}
       </div>
       <div className="code-prod">
-        <a href={prod} className="social">
-          <FluentOpen16Filled className="social-icon" />
-        </a>
-        <a href={github} className="social">
-          <Github className="social-icon" />
-        </a>
+        {prod ? (
+          <a href={prod} className="social">
+            <FluentOpen16Filled className="social-icon" />
+          </a>
+        ) : (
+          <span
+            style={{
+              marginRight: "10px",
+              color: "#a0aec0",
+            }}
+          >
+            Production à venir
+          </span>
+        )}
+        {github ? (
+          <a href={github} className="social">
+            <Github className="social-icon" />
+          </a>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
