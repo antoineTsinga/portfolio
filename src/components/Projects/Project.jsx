@@ -16,7 +16,7 @@ export default function Project() {
       title: "Hight fashion showcase",
       description:
         "Site vitrine destiné à un couturier pour exposer des créations et prendre des commandes",
-      prod: "",
+      prod: "https://onix-dev.vercel.app/",
       github: "https://github.com/antoineTsinga/HiFaShowcase",
       technos: ["React", "Spring boot"],
     },
