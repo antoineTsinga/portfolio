@@ -25,7 +25,7 @@ export default function Project() {
       title: "StreamTV",
       description:
         "Site de recommendation de films et séries basé sur les preférences de utilisateur et les tendances",
-      prod: "",
+      prod: "https://streamtv.vercel.app/",
       github: "",
       technos: ["Angular", "Spring boot"],
     },
