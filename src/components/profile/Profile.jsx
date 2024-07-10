@@ -31,26 +31,35 @@ export default function Profile() {
           <div className="about">
             <h3>Apprendre à me connaître !</h3>
             <p>
-              Diplômé de l'Institut Supérieur d’Électronique de Paris (ISEP)
-              avec mention bien, j'ai acquis une solide formation en génie
-              logiciel.
+              <strong>
+                Diplômé de l'Institut Supérieur d’Électronique de Paris (ISEP)
+              </strong>{" "}
+              avec mention bien, j'ai acquis une solide formation en{" "}
+              <strong>génie logiciel</strong>.
             </p>
+            <br></br>
             <p>
               Ma passion pour la programmation et les nouvelles technologies se
               reflète dans mon engagement constant à apprendre et à innover.
             </p>
+            <br></br>
             <p>
               En dehors du travail, je m'intéresse au dessin d'observation, aux
               échecs, et à l'animation japonaise, ce qui me permet de nourrir ma
               créativité et de m'inspirer dans mes projets professionnels.
             </p>
+            <br></br>
             <p>
               Mon objectif est de continuer à développer des solutions
               technologiques qui ont un impact positif tout en évoluant dans un
               environnement dynamique et collaboratif.
             </p>
-            <a href="#contact" className="cta-about header-cta">
-              Contact
+            <a
+              href="/docs/antoine_tsinga_cv.pdf"
+              download="antoine_tsinga_cv.pdf"
+              className="cta-about header-cta"
+            >
+              Mon CV
             </a>
           </div>
           <div className="profils-skills">

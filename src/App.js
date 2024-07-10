@@ -40,13 +40,13 @@ function App() {
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    }).catch((error) => {});
     fetch(`showcase-website-back/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    }).catch((error) => {});
 
     const indentifier = setInterval(() => {
       fetch(`https://ancachess-back.onrender.com/create_game/`, {
@@ -54,13 +54,13 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      }).catch((error) => {});
       fetch(`https://streamtv-back-api.onrender.com/`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      }).catch((error) => {});
       fetch(`showcase-website-back/`, {
         method: "GET",
         headers: {

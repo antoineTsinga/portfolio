@@ -4,6 +4,15 @@ import "./Project.css";
 export default function Project() {
   const projects = [
     {
+      img: "/images/streamtv.png",
+      title: "StreamTV",
+      description:
+        "Site de recommendation de films et séries basé sur les preférences de utilisateur et les tendances",
+      prod: "https://streamtv.vercel.app/",
+      github: "",
+      technos: ["Angular", "Spring boot"],
+    },
+    {
       img: "/images/ancachess.png",
       title: "Online Chess platform",
       description: "Platforme de jeu d'éches en ligne",
@@ -19,15 +28,6 @@ export default function Project() {
       prod: "https://onix-dev.vercel.app/",
       github: "https://github.com/antoineTsinga/HiFaShowcase",
       technos: ["React", "Spring boot"],
-    },
-    {
-      img: "/images/stream-tv.png",
-      title: "StreamTV",
-      description:
-        "Site de recommendation de films et séries basé sur les preférences de utilisateur et les tendances",
-      prod: "https://streamtv.vercel.app/",
-      github: "",
-      technos: ["Angular", "Spring boot"],
     },
   ];
 
