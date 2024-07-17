@@ -10,7 +10,7 @@ export default function Project() {
         "Site de recommendation de films et séries basé sur les preférences de utilisateur et les tendances",
       prod: "https://streamtv.vercel.app/",
       github: "",
-      technos: ["Angular", "Spring boot"],
+      technos: ["Angular", "Node"],
     },
     {
       img: "/images/ancachess.png",
