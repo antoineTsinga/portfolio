@@ -13,6 +13,14 @@ export default function Project() {
       technos: ["Angular", "Node"],
     },
     {
+      img: "/images/product-trial.png",
+      title: "Product Trial",
+      description: "Basic CRUD shop application",
+      prod: "https://product-trial.vercel.app/",
+      github: "https://github.com/antoineTsinga/product-trial",
+      technos: ["Angular", "Spring Boot"],
+    },
+    {
       img: "/images/ancachess.png",
       title: "Online Chess platform",
       description: "Platforme de jeu d'éches en ligne",
